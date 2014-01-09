@@ -46,6 +46,7 @@
       // Make a unique ID for the new child
       var regexp  = new RegExp('new_' + assoc, 'g');
       var new_id  = this.newId();
+
       content     = $.trim(content.replace(regexp, new_id));
 
       var field = this.insertFields(content, assoc, link);
@@ -56,7 +57,7 @@
       return false;
     },
     newId: function() {
-      return new Date().getTime();
+      return new Date().valueOf();
     },
     insertFields: function(content, assoc, link) {
       var target = $(link).data('target');
